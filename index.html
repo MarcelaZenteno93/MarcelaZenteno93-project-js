@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excuse Generator</title>
+</head>
+<body>
+    <h1>Excuse Generator</h1>
+    <p id="excuseOutput">No me lo vas a creer pero ...</p>
+
+    <script>
+        const excusesPart1 = [
+            "Mi perro",
+            "Mi gato",
+            "Mi hermano",
+            "Mi amiga",
+            "Mi vecino",
+        ];
+
+        const excusesPart2 = [
+            "se comió",
+            "tiró",
+            "rompió",
+            "escondió",
+            "olvidó",
+        ];
+
+        const excusesPart3 = [
+            "mi tarea",
+            "mi libro",
+            "mi lápiz",
+            "mis apuntes",
+            "mi trabajo",
+        ];
+
+        function generateRandomExcuse() {
+            const randomIndex1 = Math.floor(Math.random() * excusesPart1.length);
+            const randomIndex2 = Math.floor(Math.random() * excusesPart2.length);
+            const randomIndex3 = Math.floor(Math.random() * excusesPart3.length);
+
+            const randomExcuse = `${excusesPart1[randomIndex1]} ${excusesPart2[randomIndex2]} ${excusesPart3[randomIndex3]}.`;
+            return randomExcuse;
+        }
+
+        window.onload = function() {
+            const excuseOutput = document.getElementById("excuseOutput");
+            const randomExcuse = generateRandomExcuse();
+            excuseOutput.innerHTML = randomExcuse;
+        };
+    </script>
+</body>
+</html>
